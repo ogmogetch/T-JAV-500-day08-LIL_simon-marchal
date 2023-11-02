@@ -1,15 +1,15 @@
 package Factory;
 
 public class GiftPaper {
-    private Toy toy;
+    public String gift; // Public field for gift
 
-    public void wrap(Toy toy) {
-        this.toy = toy;
+    public void wrap(String gift) {
+        this.gift = gift;
     }
 
-    public Toy unwrap() {
-        Toy wrappedToy = this.toy;
-        this.toy = null;
-        return wrappedToy;
+    public String unwrap() {
+        String unwrapped = this.gift;
+        this.gift = null;
+        return unwrapped;
     }
 }

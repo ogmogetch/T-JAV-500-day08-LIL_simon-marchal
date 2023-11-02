@@ -1,9 +1,7 @@
 package Factory;
 
 public abstract class Toy {
-    private String Title;
+    public String title; // Public field for title
 
-    public String getTitle() {
-        return Title;
-    }
+    public abstract void play(); // Abstract method
 }
