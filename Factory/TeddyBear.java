@@ -1,5 +1,13 @@
 package Factory;
 
 public class TeddyBear extends Toy {
-    // Specific methods and attributes for TeddyBear
+    public TeddyBear() {
+        setTitle("Teddy Bear");
+    }
+
+    @Override
+    public void play() {
+        // Implementation for playing with a teddy bear
+        System.out.println("Playing with a Teddy Bear...");
+    }
 }

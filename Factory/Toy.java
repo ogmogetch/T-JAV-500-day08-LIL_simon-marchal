@@ -1,7 +1,15 @@
 package Factory;
 
 public abstract class Toy {
-    public String title; // Public field for title
+    private String title;
 
-    public abstract void play(); // Abstract method
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public abstract void play();
 }
