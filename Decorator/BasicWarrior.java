@@ -1,7 +1,9 @@
 package Decorator;
 
 public class BasicWarrior extends Warrior {
+
     public BasicWarrior() {
-        super(40, 7);
+        this.hp = 40;
+        this.dmg = 7;
     }
 }

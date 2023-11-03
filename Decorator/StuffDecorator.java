@@ -1,20 +1,16 @@
 package Decorator;
 
 public class StuffDecorator extends Warrior {
-    protected Warrior holder;
 
-    public StuffDecorator(Warrior holder) {
-        super(holder.getHp(), holder.getDmg());
-        this.holder = holder;
-    }
+    protected Warrior decoratedWarrior;
 
     @Override
     public int getHp() {
-        return holder.getHp();
+        return decoratedWarrior.getHp();
     }
 
     @Override
     public int getDmg() {
-        return holder.getDmg();
+        return decoratedWarrior.getDmg();
     }
 }

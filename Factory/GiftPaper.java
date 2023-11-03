@@ -1,6 +1,7 @@
 package Factory;
 
 public class GiftPaper {
+
     private Toy gift;
 
     public void wrap(Toy toy) {
@@ -8,16 +9,9 @@ public class GiftPaper {
     }
 
     public Toy unwrap() {
-        Toy unwrapped = this.gift;
+        Toy toy = this.gift;
         this.gift = null;
-        return unwrapped;
+        return toy;
     }
 
-    public String getTitle() {
-        if (gift == null) {
-            return "null";
-        } else {
-            return gift.getTitle().toLowerCase(); // Lowercase the title for consistency
-        }
-    }
 }

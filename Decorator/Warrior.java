@@ -1,19 +1,17 @@
 package Decorator;
 
 public abstract class Warrior {
-    private int hp;
-    private int dmg;
 
-    public Warrior(int hp, int dmg) {
-        this.hp = hp;
-        this.dmg = dmg;
-    }
+    protected int hp;
+
+    protected int dmg;
 
     public int getHp() {
-        return hp;
+        return this.hp;
     }
 
     public int getDmg() {
-        return dmg;
+        return this.dmg;
     }
+
 }
