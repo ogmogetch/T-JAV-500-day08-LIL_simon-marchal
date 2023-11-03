@@ -12,4 +12,12 @@ public class GiftPaper {
         this.gift = null;
         return unwrapped;
     }
+
+    public String getTitle() {
+        if (gift == null) {
+            return "null";
+        } else {
+            return gift.getTitle().toLowerCase(); // Lowercase the title for consistency
+        }
+    }
 }
