@@ -1,8 +1,10 @@
 package Factory;
 
+import java.util.List;
+
 public class Elf {
     private Toy currentToy;
-    private int giftPapers;
+    private List<GiftPaper> giftPapers;
 
     public boolean pickToy(Factory factory, String toyName) {
         if (currentToy != null) {
@@ -20,24 +22,28 @@ public class Elf {
     }
 
     public boolean pickPapers(Factory factory, int nb) {
-        giftPapers += nb;
-        return true;
+        List<GiftPaper> newPapers = factory.getPapers(nb);
+        if (newPapers != null) {
+            giftPapers.addAll(newPapers);
+            return true;
+        }
+        return false;
     }
 
     public Toy pack() {
         if (currentToy != null) {
-            if (giftPapers > 0) {
-                giftPapers--;
-                Toy packedToy = currentToy;
+            if (!giftPapers.isEmpty()) {
+                GiftPaper paper = giftPapers.get(0);
+                paper.wrap(currentToy);
+                giftPapers.remove(paper);
                 currentToy = null;
-                System.out.println("And another kid will be happy!");
-                return packedToy;
+                return paper.unwrap();
             } else {
                 System.out.println("Wait... I can't pack it with my shirt.");
             }
         } else {
-            if (giftPapers > 0) {
-                System.out.println("I don't have any toy, but I've some paper!");
+            if (!giftPapers.isEmpty()) {
+                System.out.println("I don't have any toy, but hey at least it's paper!");
             } else {
                 System.out.println("I don't have any toy or paper!");
             }
